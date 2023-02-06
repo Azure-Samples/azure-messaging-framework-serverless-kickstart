@@ -1,0 +1,6 @@
+{
+    "EVENT_HUB_CONNECTION_STRING": "<event hub connection string>",
+    "EVENT_HUB_NAME": "<event hub name>",
+    "EVENT_DETAILS_FILE": "Events/MicrosoftModelDataChanged.json",
+    "EVENT_TYPE": "Microsoft.Azure.Models.EventHubs.Events.V1.StreamingDataChanged or Microsoft.Azure.Models.EventHubs.Events.V1.AasStreamingDataChanged or Microsoft.Azure.Models.EventHubs.Events.V2.StreamingDataChanged"
+}

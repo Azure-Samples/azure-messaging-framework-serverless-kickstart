@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{77F8CC2A-92D4-41B5-BB9A-3F883247E639}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E450C2BE-A553-48DD-976C-723F02139564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Azure.Functions", "src\Microsoft.Azure.Functions\Microsoft.Azure.Functions.csproj", "{1A943EA4-E9CA-4487-8285-7D4BEE06EBBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Azure.Models", "src\Microsoft.Azure.Models\Microsoft.Azure.Models.csproj", "{F4690FE7-A6E1-4AE5-87DA-22249899FD1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{0569774C-A744-4D1C-B13B-4023D26BBF5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Azure.Functions.Tests", "tests\Microsoft.Azure.Functions.Tests\Microsoft.Azure.Functions.Tests.csproj", "{C1E1AD19-B228-4839-9A82-0C1D72DB2DB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.TestFramework", "tests\Microsoft.TestFramework\Microsoft.TestFramework.csproj", "{80B839FA-C754-4DB0-AA0E-2DF151254346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Azure.Models.Tests", "tests\Microsoft.Azure.Models.Tests\Microsoft.Azure.Models.Tests.csproj", "{F56156A2-69D4-465D-A7C3-CFF30B64F486}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.EventHubSimulator", "tools\Microsoft.EventHubSimulator\Microsoft.EventHubSimulator.csproj", "{9E2000F8-4A8E-4D5A-92C0-DE7DF82BD9FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Azure.Functions.StreamingDataFlow", "src\Microsoft.Azure.Functions.StreamingDataFlow\Microsoft.Azure.Functions.StreamingDataFlow.csproj", "{DF150D34-0E27-482D-AE61-D1DA7FD4BE65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Azure.Functions.StreamingDataFlow.Tests", "tests\Microsoft.Azure.Functions.StreamingDataFlow.Tests\Microsoft.Azure.Functions.StreamingDataFlow.Tests.csproj", "{C878BBDE-6981-463B-9C5A-1E4EBD586F51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A943EA4-E9CA-4487-8285-7D4BEE06EBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A943EA4-E9CA-4487-8285-7D4BEE06EBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A943EA4-E9CA-4487-8285-7D4BEE06EBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A943EA4-E9CA-4487-8285-7D4BEE06EBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4690FE7-A6E1-4AE5-87DA-22249899FD1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4690FE7-A6E1-4AE5-87DA-22249899FD1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4690FE7-A6E1-4AE5-87DA-22249899FD1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4690FE7-A6E1-4AE5-87DA-22249899FD1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E1AD19-B228-4839-9A82-0C1D72DB2DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E1AD19-B228-4839-9A82-0C1D72DB2DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E1AD19-B228-4839-9A82-0C1D72DB2DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E1AD19-B228-4839-9A82-0C1D72DB2DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80B839FA-C754-4DB0-AA0E-2DF151254346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80B839FA-C754-4DB0-AA0E-2DF151254346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80B839FA-C754-4DB0-AA0E-2DF151254346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80B839FA-C754-4DB0-AA0E-2DF151254346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F56156A2-69D4-465D-A7C3-CFF30B64F486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F56156A2-69D4-465D-A7C3-CFF30B64F486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F56156A2-69D4-465D-A7C3-CFF30B64F486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F56156A2-69D4-465D-A7C3-CFF30B64F486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E2000F8-4A8E-4D5A-92C0-DE7DF82BD9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E2000F8-4A8E-4D5A-92C0-DE7DF82BD9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E2000F8-4A8E-4D5A-92C0-DE7DF82BD9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E2000F8-4A8E-4D5A-92C0-DE7DF82BD9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF150D34-0E27-482D-AE61-D1DA7FD4BE65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF150D34-0E27-482D-AE61-D1DA7FD4BE65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF150D34-0E27-482D-AE61-D1DA7FD4BE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF150D34-0E27-482D-AE61-D1DA7FD4BE65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C878BBDE-6981-463B-9C5A-1E4EBD586F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C878BBDE-6981-463B-9C5A-1E4EBD586F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C878BBDE-6981-463B-9C5A-1E4EBD586F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C878BBDE-6981-463B-9C5A-1E4EBD586F51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A943EA4-E9CA-4487-8285-7D4BEE06EBBD} = {77F8CC2A-92D4-41B5-BB9A-3F883247E639}
+		{F4690FE7-A6E1-4AE5-87DA-22249899FD1E} = {77F8CC2A-92D4-41B5-BB9A-3F883247E639}
+		{C1E1AD19-B228-4839-9A82-0C1D72DB2DB2} = {E450C2BE-A553-48DD-976C-723F02139564}
+		{80B839FA-C754-4DB0-AA0E-2DF151254346} = {E450C2BE-A553-48DD-976C-723F02139564}
+		{F56156A2-69D4-465D-A7C3-CFF30B64F486} = {E450C2BE-A553-48DD-976C-723F02139564}
+		{9E2000F8-4A8E-4D5A-92C0-DE7DF82BD9FF} = {0569774C-A744-4D1C-B13B-4023D26BBF5A}
+		{DF150D34-0E27-482D-AE61-D1DA7FD4BE65} = {77F8CC2A-92D4-41B5-BB9A-3F883247E639}
+		{C878BBDE-6981-463B-9C5A-1E4EBD586F51} = {E450C2BE-A553-48DD-976C-723F02139564}
+	EndGlobalSection
+EndGlobal
