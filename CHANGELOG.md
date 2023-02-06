@@ -6,5 +6,6 @@
 
 - Handling event hub messages using the integration handler framework
 - Automatic dependency injection discovery mechanism
+- Parsing EventData body into a strong type object
 - Supporting schema versioning for event hub messages
 - Processing multiple event types sent to the same event hub
