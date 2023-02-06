@@ -2,7 +2,7 @@
 
 ## Overview
 
-The complexity and frequency of schema changes are usually overestimated and we need to add
+The complexity and frequency of schema changes are usually underestimated and we need to add
 more information or modify the definition for a better developer experience.
 
 ![Event Schema Versioning](./assets/event-schema-versioning.png)
