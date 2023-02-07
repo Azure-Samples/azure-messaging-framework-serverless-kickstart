@@ -16,7 +16,7 @@ namespace Microsoft.Azure.Functions.Tests.Services
     {
         [Theory]
         [ComplexLoadInlineData("TestData/test.json")]
-        [Trait("Category", "AasToAdt")]
+        [Trait("Category", "Category1")]
         public void Add_TwoInt_ReturnsSum(int i, int j, int expected)
         {
             Test(
@@ -38,7 +38,8 @@ namespace Microsoft.Azure.Functions.Tests.Services
 ```
 
 where `i`, `j` and `expected` will be read from the specified json file located in `TestData/test.json'.
-The input parameters can be any serializable complex types such as EventData or Aas models. This can be easily used for the contract testing too if needed.
+The input parameters can be any serializable complex types such as EventData or streaming data models.
+This can be easily used for the contract testing too if needed.
 
 ``` json
 {

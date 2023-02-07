@@ -1,45 +1,45 @@
 using Azure.Messaging.EventHubs;
-using Microsoft.Azure.WebJobs;
-using Moq;
-using Microsoft.Azure.Models.EventHubs.Events.V1;
-using Microsoft.TestFramework;
 using Microsoft.Azure.Functions.EventHubs.Extensions;
+using Microsoft.Azure.Models.EventHubs.Events.V1;
+using Microsoft.Azure.WebJobs;
+using Microsoft.TestFramework;
+using Moq;
 
 namespace Microsoft.Azure.Functions.StreamingDataFlow.Tests.Functions;
 
 public class StreamingDataChangedFunctionTests : BaseTest
 {
     [Fact]
-    [Trait("Area", "StreamingDataToAdt")]
+    [Trait("Area", "StreamingDataProcessed")]
     [Trait("Category", "UnitTest")]
-    public async Task GivenFunctionTrigered_WhenHandlerReturnAasResult_ThenFunctionSendEvent()
+    public async Task GivenFunctionTrigered_WhenHandlerReturnProccessedResult_ThenFunctionSendEvent()
     {
         // arrange
         var inputEvent = new EventData();
 
-        var aasEventData = new EventData();
-        aasEventData.SetEventType(typeof(AasStreamingDataChanged).FullName);
+        var processedEventData = new EventData();
+        processedEventData.SetEventType(typeof(StreamingDataProcessed).FullName);
 
-        var adtCollector = new Mock<IAsyncCollector<EventData>>();
+        var collector = new Mock<IAsyncCollector<EventData>>();
 
-        adtCollector.Setup( collector => collector.AddAsync(aasEventData, default(CancellationToken)));
+        collector.Setup( collector => collector.AddAsync(processedEventData, default(CancellationToken)));
 
         var serviceProvider = new Mock<IServiceProvider>(MockBehavior.Strict);
         var function = new Mock<StreamingDataChangedFunction>(
             serviceProvider.Object, GetLogger<StreamingDataChangedFunction>());
 
         function.CallBase = true;
-        function.Setup( func => func.RunFunctionWithReturnAsync(It.IsAny<EventData>())).Returns(Task.FromResult<EventData>(aasEventData));
+        function.Setup( func => func.RunFunctionWithReturnAsync(It.IsAny<EventData>())).Returns(Task.FromResult<EventData>(processedEventData));
 
         // act
-        await function.Object.Run(inputEvent, adtCollector.Object);
+        await function.Object.Run(inputEvent, collector.Object);
 
         // assert
         Mock.VerifyAll();
     }
 
     [Fact]
-    [Trait("Area", "StreamingDataToAas")]
+    [Trait("Area", "StreamingDataToProcessed")]
     [Trait("Category", "UnitTest")]
     public async Task GivenFunctionTrigered_WhenHandleReturnNull_ThenFunctionSendNoEvent()
     {

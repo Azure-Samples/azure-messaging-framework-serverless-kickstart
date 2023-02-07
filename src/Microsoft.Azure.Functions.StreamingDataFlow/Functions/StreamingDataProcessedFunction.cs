@@ -7,20 +7,20 @@ using Microsoft.Extensions.Logging;
 namespace Microsoft.Azure.Functions.StreamingDataFlow;
 
 /// <summary>
-/// Azure function to process AAS streaming data changed event.
+/// Azure function to process streaming data processed event.
 /// </summary>
 [ExcludeFromCodeCoverage]
-public class AasStreamingDataChangedFunction : BasicFunctionAsync
+public class StreamingDataProcessedFunction : BasicFunctionAsync
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="AasStreamingDataChangedFunction"/> class.
+    /// Initializes a new instance of the <see cref="StreamingDataProcessedFunction"/> class.
     /// </summary>
     /// <param name="serviceProvider">A service provider.</param>
     /// <param name="loggerFactory">A logger factory.</param>
-    public AasStreamingDataChangedFunction(
+    public StreamingDataProcessedFunction(
         IServiceProvider serviceProvider,
         ILoggerFactory loggerFactory)
-        : base(serviceProvider, loggerFactory.CreateLogger<AasStreamingDataChangedFunction>())
+        : base(serviceProvider, loggerFactory.CreateLogger<StreamingDataProcessedFunction>())
     {
     }
 
@@ -29,7 +29,7 @@ public class AasStreamingDataChangedFunction : BasicFunctionAsync
     /// </summary>
     /// <param name="eventData">The input EventHub events.</param>
     /// <returns></returns>
-    [FunctionName(nameof(AasStreamingDataChangedFunction))]
+    [FunctionName(nameof(StreamingDataProcessedFunction))]
     public async Task Run([EventHubTrigger("%EVENT_HUB_NAME2%", Connection = "EVENT_HUB_CONNECTION_STRING")] EventData eventData)
     {
         await this.RunFunctionAsync(eventData);
@@ -41,6 +41,6 @@ public class AasStreamingDataChangedFunction : BasicFunctionAsync
     /// <returns></returns>
     protected override Type? GetDefaultIntegrationEvent()
     {
-        return typeof(Models.EventHubs.Events.V1.AasStreamingDataChanged);
+        return typeof(Models.EventHubs.Events.V1.StreamingDataProcessed);
     }
 }

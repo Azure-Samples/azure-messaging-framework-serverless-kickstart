@@ -62,8 +62,8 @@ traces
         "includeScopes": true,
         "logLevel": {
             "Function": "Debug",
-            "Function.AasModelDataChangedFunction": "Debug",
-            "Function.MicrosoftModelDataChangedFunction": "Debug",
+            "Function.StreamingDataProcessedFunction": "Debug",
+            "Function.StreamingDataChangedFunction": "Debug",
             "Microsoft": "Debug",
             "default": "None"
         },

@@ -7,18 +7,18 @@ using Microsoft.Extensions.Logging;
 namespace Microsoft.Azure.Functions.StreamingDataFlow.EventHandler;
 
 /// <summary>
-/// Sample of a handler for processing AasStreamingDataChanged event.
+/// Sample of a handler for processing StreamingDataProcessed event.
 /// </summary>
-[DependencyInjection(Extends = typeof(IIntegrationEventHandlerAsync<AasStreamingDataChanged>), ServiceType = ServiceLifetime.Scoped)]
-public class AasStreamingDataChangedHandlerAsync : IIntegrationEventHandlerAsync<AasStreamingDataChanged>
+[DependencyInjection(Extends = typeof(IIntegrationEventHandlerAsync<StreamingDataProcessed>), ServiceType = ServiceLifetime.Scoped)]
+public class StreamingDataProcessedHandlerAsync : IIntegrationEventHandlerAsync<StreamingDataProcessed>
 {
-    private readonly ILogger<AasStreamingDataChangedHandlerAsync> logger;
+    private readonly ILogger<StreamingDataProcessedHandlerAsync> logger;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="AasStreamingDataChangedHandlerAsync"/> class.
+    /// Initializes a new instance of the <see cref="StreamingDataProcessedHandlerAsync"/> class.
     /// </summary>
     /// <param name="logger"></param>
-    public AasStreamingDataChangedHandlerAsync(ILogger<AasStreamingDataChangedHandlerAsync> logger)
+    public StreamingDataProcessedHandlerAsync(ILogger<StreamingDataProcessedHandlerAsync> logger)
     {
         this.logger = logger;
     }
@@ -28,7 +28,7 @@ public class AasStreamingDataChangedHandlerAsync : IIntegrationEventHandlerAsync
     /// </summary>
     /// <param name="eventData"></param>
     /// <returns></returns>
-    public async Task Handle(AasStreamingDataChanged eventData)
+    public async Task Handle(StreamingDataProcessed eventData)
     {
         // Whole logic to handle the event goes here.
         await Task.CompletedTask;

@@ -22,7 +22,7 @@ The folder structure for this repo is as below:
   - Microsoft.Azure.Models:
   containing a few examples of events that are used in this project and shows how to define ant integration event in the project.
   - Microsoft.Azure.Functions.StreamingDataFlow: A sample project which is using the event driven framework to handle all events received by Azure functions.
-  This project contains two main functions: StreamingDataChangedFunction and AasStreamingDataChangedFunction.
+  This project contains two main functions: StreamingDataChangedFunction and StreamingDataProcessedFunction.
 - tests:
 containing all projects required for testing including unit-testing and component testing.
 All unit/component tests will utilize xUnit framework.

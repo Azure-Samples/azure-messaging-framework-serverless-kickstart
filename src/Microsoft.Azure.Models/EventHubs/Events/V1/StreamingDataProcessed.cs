@@ -3,9 +3,9 @@ using Microsoft.Azure.Functions.EventHubs;
 namespace Microsoft.Azure.Models.EventHubs.Events.V1;
 
 /// <summary>
-/// Integration event whenever Aas streaming data changed.
+/// Integration event whenever streaming data processed.
 /// </summary>
-public class AasStreamingDataChanged : IntegrationEvent
+public class StreamingDataProcessed : IntegrationEvent
 {
     /// <summary>
     /// Gets or sets the machine id.

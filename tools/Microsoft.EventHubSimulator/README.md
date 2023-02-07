@@ -7,7 +7,7 @@ Simulates a message being sent from the Streaming Azure function or Pipeline.
 - [Configuration](#configuration)
   - [local.settings.json](#localsettingsjson)
   - [Streaming Data Event Changed V1 Config](#streaming-data-event-changed-v1-config)
-  - [AAS Streaming Data Event Changed V1 Config](#aas-streaming-data-event-changed-v1-config)
+  - [Streaming Data Event Processed V1 Config](#streaming-data-event-processed-v1-config)
 - [Run the Azure Functions locally](#run-the-azure-functions-locally)
   - [Steps](#steps)
 
@@ -24,7 +24,7 @@ Simulates a message being sent from the Streaming Azure function or Pipeline.
 - **EVENT_TYPE** [REQUIRED]: The type of event that will is being sent to Event Hub. The event type can be one of the following:
 
   - **1**: Streaming Data Event Changed V1
-  - **2**: AAS Streaming Event Changed V1
+  - **2**: Streaming Event Processed V1
 
     **NOTE**: The event type should be a number and should **not** be surrounded in quotes.
 
@@ -50,9 +50,9 @@ Where:
 
 **NOTE**: This payload should only have one event to mimic the expected behavior from the Streaming Azure function or pipeline.
 
-### AAS Streaming Data Event Changed V1 Config
+### Streaming Data Event Processed V1 Config
 
-The file for `AAS Streaming Data Event Changed V1` should contain the following content.
+The file for `Streaming Data Event Processed V1` should contain the following content.
 
 ```json
 [

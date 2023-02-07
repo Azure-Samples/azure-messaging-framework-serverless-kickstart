@@ -19,7 +19,7 @@ public class StreamingDataChangedHandlerAsync : IIntegrationEventHandlerWithRetu
     private readonly ILogger<StreamingDataChangedHandlerAsync> logger;
     private readonly IStreamingDataFlowSettings settings;
 
-    private readonly IAdapter<StreamingDataChanged, AasStreamingDataChanged> adapter;
+    private readonly IAdapter<StreamingDataChanged, StreamingDataProcessed> adapter;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StreamingDataChangedHandlerAsync"/> class.
@@ -28,7 +28,7 @@ public class StreamingDataChangedHandlerAsync : IIntegrationEventHandlerWithRetu
     /// <param name="logger"></param>
     public StreamingDataChangedHandlerAsync(
         IStreamingDataFlowSettings settings,
-        IAdapter<StreamingDataChanged, AasStreamingDataChanged> adapter,
+        IAdapter<StreamingDataChanged, StreamingDataProcessed> adapter,
         ILogger<StreamingDataChangedHandlerAsync> logger)
     {
         this.logger = logger;
@@ -45,12 +45,12 @@ public class StreamingDataChangedHandlerAsync : IIntegrationEventHandlerWithRetu
     {
         // Whole logic to handle the event goes here.
 
-        // Convert the event to AasStreamingDataChanged.
-        var aasStreamingDataChanged = this.adapter.Convert(eventData);
+        // Convert the event to StreamingDataProcessed.
+        var streamingDataProcessed = this.adapter.Convert(eventData);
 
         // Create a new EventData.
-        var newEventData = new EventData(JsonConvert.SerializeObject(aasStreamingDataChanged));
-        newEventData.SetEventType(typeof(AasStreamingDataChanged).FullName!);
+        var newEventData = new EventData(JsonConvert.SerializeObject(streamingDataProcessed));
+        newEventData.SetEventType(typeof(StreamingDataProcessed).FullName!);
         newEventData.CorrelationId = eventData.MetaData.TraceId;
 
         return await Task.FromResult<EventData>(newEventData);
