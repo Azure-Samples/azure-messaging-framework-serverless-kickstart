@@ -10,7 +10,7 @@ namespace Microsoft.Azure.Functions.StreamingDataFlow.Tests.Functions;
 public class StreamingDataChangedFunctionTests : BaseTest
 {
     [Fact]
-    [Trait("Area", "StreamingDataProcessed")]
+    [Trait("Area", "StreamingDataChanged")]
     [Trait("Category", "UnitTest")]
     public async Task GivenFunctionTrigered_WhenHandlerReturnProccessedResult_ThenFunctionSendEvent()
     {
@@ -39,7 +39,7 @@ public class StreamingDataChangedFunctionTests : BaseTest
     }
 
     [Fact]
-    [Trait("Area", "StreamingDataToProcessed")]
+    [Trait("Area", "StreamingDataToChanged")]
     [Trait("Category", "UnitTest")]
     public async Task GivenFunctionTrigered_WhenHandleReturnNull_ThenFunctionSendNoEvent()
     {
