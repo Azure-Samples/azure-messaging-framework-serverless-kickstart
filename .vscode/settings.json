@@ -1,0 +1,7 @@
+{
+    "azureFunctions.projectSubpath": "src/Microsoft.Azure.Functions.StreamingDataFlow",
+    "azureFunctions.deploySubpath": "src/Microsoft.Azure.Functions.StreamingDataFlow/bin/Release/net6.0/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "azureFunctions.preDeployTask": "publish (functions)"
+}

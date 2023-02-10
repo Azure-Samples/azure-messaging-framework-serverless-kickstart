@@ -1,13 +1,11 @@
-## [project-title] Changelog
+# Messaging Framework Changelog
 
-<a name="x.y.z"></a>
-# x.y.z (yyyy-mm-dd)
+## 0.1.0 (2023-02-06)
 
-*Features*
-* ...
+## Features
 
-*Bug Fixes*
-* ...
-
-*Breaking Changes*
-* ...
+- Handling event hub messages using the integration handler framework
+- Automatic dependency injection discovery mechanism
+- Parsing EventData body into a strong type object
+- Supporting schema versioning for event hub messages
+- Processing multiple event types sent to the same event hub

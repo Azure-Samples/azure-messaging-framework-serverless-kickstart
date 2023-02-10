@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "EVENT_HUB_NAME1": "streamingdatachanged-evh",
+    "EVENT_HUB_NAME2": "streamingdataprocessed-evh",
+    "APPLICATIONINSIGHTS_CONNECTION_STRING": "",
+    "AzureWebJobsStorage": "",
+    "AZURE_TENANT_ID": "",
+    "EVENT_HUB_CONNECTION_STRING": "",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+  }
+}

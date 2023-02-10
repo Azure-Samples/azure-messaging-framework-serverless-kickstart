@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.msbuild">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="JunitXml.TestLogger" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="coverlet.msbuild" />
+    <None Remove="JunitXml.TestLogger" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.TestFramework\Microsoft.TestFramework.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Azure.Functions\Microsoft.Azure.Functions.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Azure.Models\Microsoft.Azure.Models.csproj" />
+  </ItemGroup>
+  <Target Name="CopyPayloads" AfterTargets="Build">
+    <ItemGroup>
+      <_CopyItems Include="$(ProjectDir)\TestData\*.*" />
+    </ItemGroup>
+    <Message Text="Executing CopyPayloads task" Importance="High" />
+    <Copy SourceFiles="@(_CopyItems)" DestinationFolder="$(TargetDir)\TestData\" />
+    <Message Text="Copied build files" Importance="High" />
+  </Target>
+</Project>
